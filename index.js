@@ -101,6 +101,6 @@ app.use("/api/v1/message",messageRoutes);
 
 
 
-http.listen(4000,function(){
+http.listen(process.env.PORT,function(){
     console.log("server running at Port 4000");
 })
