@@ -30,6 +30,8 @@ app.use(express.urlencoded({extended:true}))
 
 // const server=http.createServer(app);
 // const io=new Server(server);
+
+app.use(cors({ origin: 'http://127.0.0.1:5173'}));
  
 
 const io= require('socket.io')(http, {
@@ -102,5 +104,5 @@ app.get('/', (req, res) => {
 
 
 http.listen(process.env.PORT,function(){
-    console.log("server running at Port 4000");
+    console.log(`server running at ${process.env.PORT}`);
 })
