@@ -92,11 +92,11 @@ app.use("/api/v1/chat",chatRoutes);
 app.use("/api/v1/message",messageRoutes);
 
 
-// app.get('/', (req, res) => {
-//     res.json({
-//       message: 'Hello world',
-//     });
-//   });
+app.get('/', (req, res) => {
+    res.json({
+      message: 'Hello world',
+    });
+  });
   
 
 
