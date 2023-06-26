@@ -30,14 +30,14 @@ app.use(express.urlencoded({extended:true}))
 
 // const server=http.createServer(app);
 // const io=new Server(server);
-
-app.use(cors({ origin: 'https://talkr-frontend.vercel.app/'}));
+// https://talkr-frontend.vercel.app
+app.use(cors({ origin: 'https://talkr-frontend.vercel.app'}));
  
 
 const io= require('socket.io')(http, {
     pingTimeout: 60000,
     cors: {
-        origin: "https://talkr-frontend.vercel.app/",
+        origin: 'https://talkr-frontend.vercel.app',
         credentials: true
 
     }
