@@ -31,13 +31,13 @@ app.use(express.urlencoded({extended:true}))
 // const server=http.createServer(app);
 // const io=new Server(server);
 
-app.use(cors({ origin: 'http://127.0.0.1:5173'}));
+app.use(cors({ origin: 'https://talkr-frontend.vercel.app/'}));
  
 
 const io= require('socket.io')(http, {
     pingTimeout: 60000,
     cors: {
-        origin: "http://127.0.0.1:5173",
+        origin: "https://talkr-frontend.vercel.app/",
         credentials: true
 
     }
