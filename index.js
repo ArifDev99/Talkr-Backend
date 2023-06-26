@@ -46,10 +46,10 @@ const io= require('socket.io')(http, {
 io.on('connection', (socket) => {
   
     socket.on("setup",(userData)=>{
-      console.log(`⚡: ${userData._id} user just connected!`);
+      console.log(`⚡: ${userData?._id} user just connected!`);
       if(userData && userData._id){
 
-        socket.join(userData._id);
+        socket.join(userData?._id);
         socket.emit("Connected",socket.id);
       }else{
         console.log("userdat is missing");
@@ -65,12 +65,12 @@ io.on('connection', (socket) => {
     socket.on("stop typing", (room) => socket.in(room).emit("stop typing"));
 
     socket.on("send_message",function(newMessageRecieved){
-      var chat=newMessageRecieved.chat
+      var chat=newMessageRecieved?.chat
       if(!chat.users) return console.log("Chat.users not defined");
 
       chat.users.forEach(user => {
        
-        if(user._id === newMessageRecieved.sender._id) return ;
+        if(user._id === newMessageRecieved?.sender?._id) return ;
 
         socket.in(user._id).emit("message recieved",newMessageRecieved)
       });
