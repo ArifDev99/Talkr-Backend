@@ -31,7 +31,9 @@ app.use(express.urlencoded({extended:true}))
 // const server=http.createServer(app);
 // const io=new Server(server);
 // https://talkr-frontend.vercel.app
+
 app.use(cors({ origin: 'https://talkr-frontend.vercel.app'}));
+// app.use(cors({ origin: 'http://localhost:5173'}));
  
 
 const io= require('socket.io')(http, {

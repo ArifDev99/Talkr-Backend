@@ -72,7 +72,7 @@ const authUser=async(req,res)=>{
 
         const isuserexits=await User.findOne({email});
         if(!isuserexits){
-            return res.status(400).json({message:"User not Exit"});
+            return res.status(400).json({message:"!User Not Found"});
         }
 
         

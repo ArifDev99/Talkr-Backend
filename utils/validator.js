@@ -1,9 +1,11 @@
 const validfirstName=(firstname)=>{
-    const nameregx=new RegExp(/[a-zA-Z][a-zA-Z]+[a-zA-Z]$/)
+    // const nameregx=new RegExp(/[a-zA-Z][a-zA-Z]+[a-zA-Z]$/)
+    const nameregx=new RegExp(/[a-zA-Z][a-zA-Z]+[A-Za-z0-9_]$/)
     return nameregx.test(firstname)
 }
 const validlastName=(lastname)=>{
-    const nameregx=new RegExp(/[a-zA-Z][a-zA-Z]+[a-zA-Z]$/)
+    // const nameregx=new RegExp(/[a-zA-Z][a-zA-Z]+[a-zA-Z]$/)
+    const nameregx=new RegExp(/[a-zA-Z][a-zA-Z]+[A-Za-z0-9_]$/)
     return nameregx.test(lastname)
 }
 
